@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="Isput">
+
+<head>
+    <meta charset="UTF-8">
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <title>Варіант 23</title>
+
+</head>
+
+
+
+
+<body>
+    
+    <h1>Каталог дитячих іграшок </h1>
+    
+    
+    <div ng-controller='Controller as buyItm'>
+
+        <ol>
+
+            <li ng-repeat="item in buyItm.ItemsList">
+                <div ng-hide="item.hide===true">
+                    Наявно {{item.quantity}} коробок з іграшками "{{item.mark}}"
+                     <button ng-click="buyItm.hideItem($index)">Приховати</button>
+                     <button ng-click="buyItm.removeItem($index)">Видалити</button>
+                 </div>
+                </li>
+       </ol>
+
+
+
+    </div>
+
+    
+</body>
+
+</html>
